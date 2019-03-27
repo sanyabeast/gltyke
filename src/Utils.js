@@ -74,10 +74,10 @@ class Utils {
 	}
 
 	static injectCSS ( id, cssString ) {
-		if ( !document.querySelector( `#telechart-css-${id}` ) ) {
-			document.querySelector( "head" ).appendChild( this.parseHTML( `<style id="telechart-css-${id}" type="text/css">${cssString}</style>` ) )
+		if ( !document.querySelector( `#glengine-css-${id}` ) ) {
+			document.querySelector( "head" ).appendChild( this.parseHTML( `<style id="glengine-css-${id}" type="text/css">${cssString}</style>` ) )
 		} else {
-			document.querySelector( `#telechart-css-${id}` ).textContent = cssString
+			document.querySelector( `#glengine-css-${id}` ).textContent = cssString
 		}
 	}
 
@@ -88,7 +88,7 @@ class Utils {
 			cssText += `--${name}:${value};\n`
 		})
 
-		cssText = `.telechart {${cssText}}`
+		cssText = `.glengine {${cssText}}`
 		
 		return cssText
 	}

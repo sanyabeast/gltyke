@@ -21,7 +21,7 @@ class Skin {
 	}
 
 	apply () {
-		Utils.injectCSS( "telechart-skin-vars", this.cssText )
+		Utils.injectCSS( "glengine-skin-vars", this.cssText )
 
 		Utils.loopCollection( Config.glColors, ( color, name )=>{
 			if ( this.$values[ name ] ) {

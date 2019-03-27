@@ -41,7 +41,7 @@ class GLEngineModule {
 
 	/* logging */
 	clog ( ...args ) {
-		console.log( `%cTelechart:${ this.constructor.name }:`, "font-weight:bold; color:#3982c6;", ...args )
+		console.log( `%cGLEngine:${ this.constructor.name }:`, "font-weight:bold; color:#3982c6;", ...args )
 	}
 }
 
