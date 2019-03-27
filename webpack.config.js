@@ -16,7 +16,6 @@ let webpackConfig = {
     output: {
         filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
-        library: "GLTyke",
         libraryTarget: "umd",
     },
     module: {
@@ -62,7 +61,7 @@ let webpackConfig = {
 
 if (env == "production") {
     webpackConfig.entry = {
-        "gltyke": "GLTyke/GLTyke",
+        "tykegl": "GLEngine",
         "playground": "main"
     }
 
@@ -92,9 +91,6 @@ if (env == "production") {
         })]
     }
 
-    webpackConfig.plugins.push(new JsDocPlugin({
-        conf: path.join(__dirname, 'jsdoc.conf'),
-    }));
 } else {
     webpackConfig.plugins.push( 
         new BundleAnalyzerPlugin({
