@@ -82,10 +82,15 @@ class GLEngine extends Utils.aggregation( GLEngineModule, RenderingObject ) {
          sizeNeedsUpdate: true,
          maxShaderPrecision: "mediump",
          time: ChartMath.float32( 0 ),
+         mouse: ChartMath.vec2( 0, 0 )
       }
 
       this.$temp.prevTimeUpdate = ( +new Date() )
       this.$temp.time = ( +new Date() )
+
+      this.$modules.canvas.on( "canvas.mousemove", ( evt )=>{
+         this.$state.mouse.set( evt.x, evt.y )
+      } )
 
 
       let gl = this.$state.gl
@@ -103,7 +108,8 @@ class GLEngine extends Utils.aggregation( GLEngineModule, RenderingObject ) {
          "worldScale",
          "worldPosition",
          "maxShaderPrecision",
-         "time"
+         "time",
+         "mouse"
       ] )
 
  

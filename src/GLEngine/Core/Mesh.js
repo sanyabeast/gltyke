@@ -47,7 +47,8 @@ class Mesh extends RenderingObject {
 			"viewportSize": engine.size,
 			"resolution": Config.DPR,
 			"time": engine.time,
-			"opacity": opacity
+			"opacity": opacity,
+			"mouse": engine.mouse
 		} )
 
 		gl.drawElements(gl.TRIANGLES, this.geometry.indicesCount, gl.UNSIGNED_SHORT,0);

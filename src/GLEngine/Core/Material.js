@@ -67,7 +67,8 @@ class Material {
 			"viewportSize":  ChartMath.vec2( 0, 0 ),
 			"resolution": ChartMath.float32( 1 ),
 			"opacity": ChartMath.float32( 1 ),
-			"time": ChartMath.float32( 0 )
+			"time": ChartMath.float32( 0 ),
+			"mouse": ChartMath.vec2( 1, 1 )
 		} )
 		
 	}

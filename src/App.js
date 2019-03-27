@@ -23,7 +23,7 @@ class App {
 				height: w
 			} ),
 			material: new GLEngine.Material( {
-				fragmentShader: "frag.bubbles",
+				fragmentShader: "frag.fluid_m",
 				vertexShader: "vert.default",
 				uniforms: {
 					diffuse: GLEngine.ChartMath.color( "#ff0000" ),
@@ -60,7 +60,7 @@ class App {
 				height: w
 			} ),
 			material: new GLEngine.Material( {
-				fragmentShader: "frag.flower",
+				fragmentShader: "frag.fluid",
 				vertexShader: "vert.default",
 				uniforms: {
 					diffuse: GLEngine.ChartMath.color( "#ff0000" ),
@@ -78,7 +78,7 @@ class App {
 				height: w
 			} ),
 			material: new GLEngine.Material( {
-				fragmentShader: "frag.crosses",
+				fragmentShader: "frag.tubex",
 				vertexShader: "vert.default",
 				uniforms: {
 					diffuse: GLEngine.ChartMath.color( "#ff0000" ),
@@ -89,6 +89,8 @@ class App {
 
 		rect4.position.x = 0
 		rect4.position.y = 400
+
+
 
 		this.glengine.addChild( rect1 )
 		this.glengine.addChild( rect2 )

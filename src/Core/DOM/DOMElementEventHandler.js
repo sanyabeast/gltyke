@@ -124,6 +124,12 @@ class DOMElementEventHandler extends GLEngineModule {
 				prevClickTime = now
 
 			} )
+		},
+
+		mousemove: function ( domElement, callback ) {
+			domElement.addEventListener( "mousemove", ( eventData )=>{
+				callback( this.$normalizeEventData( "mousemove", eventData, domElement ) )
+			} )
 		}
 	}
 
