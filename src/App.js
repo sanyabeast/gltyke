@@ -78,7 +78,7 @@ class App {
 				height: w
 			} ),
 			material: new GLEngine.Material( {
-				fragmentShader: "frag.tubex",
+				fragmentShader: "frag.ocean",
 				vertexShader: "vert.default",
 				uniforms: {
 					diffuse: GLEngine.ChartMath.color( "#ff0000" ),

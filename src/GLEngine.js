@@ -87,9 +87,8 @@ class GLEngine extends Utils.aggregation( GLEngineModule, RenderingObject ) {
 
       this.$temp.prevTimeUpdate = ( +new Date() )
       this.$temp.time = ( +new Date() )
-
       this.$modules.canvas.on( "canvas.mousemove", ( evt )=>{
-         this.$state.mouse.set( evt.x, evt.y )
+         this.$state.mouse.set( evt.x / this.$state.size.x, evt.y / this.$state.size.y )
       } )
 
 
@@ -263,7 +262,7 @@ class GLEngine extends Utils.aggregation( GLEngineModule, RenderingObject ) {
       let delta = ( now - this.$temp.prevTimeUpdate )
 
       this.$temp.prevTimeUpdate = now
-      this.$temp.time = ( ( this.$temp.time + delta ) % ( 60 * 1000 ) )
+      this.$temp.time = ( ( this.$temp.time + delta ) % ( 60 * 60 * 1000 ) )
       this.$state.time.set( this.$temp.time / 1000 )
       
    }

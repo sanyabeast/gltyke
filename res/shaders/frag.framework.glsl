@@ -80,7 +80,7 @@ void main( void ) {
 	vec2 pos = ( gl_FragCoord.xy * 2.0 - viewportSize.xy ) / min(viewportSize.x,viewportSize.y);
 
 	vec3 col = vec3(0.0);
-	vec3 cameraPos = vec3(0.0,0.0 + (mouse.x / 10000.),-5.0);
+	vec3 cameraPos = vec3(0.0,0.0 + (mouse.x / 10.),-5.0);
 	vec3 cDir= vec3(0.0,0.0,-1.0);
 	vec3 cUp = vec3(0.3,1.0,0.0);
 	vec3 cSide = cross(cDir,cUp);

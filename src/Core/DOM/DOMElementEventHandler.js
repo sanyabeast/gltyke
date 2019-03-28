@@ -168,7 +168,7 @@ class DOMElementEventHandler extends GLEngineModule {
 			nEvt = this.$normalizeTouchEventData( eventName, eventData, target )
 		} else {
 			nEvt.x = ( evt.pageX - boundingRect.x ) * Config.DPR	
-			nEvt.y = ( evt.pageX - boundingRect.y ) * Config.DPR	
+			nEvt.y = ( boundingRect.height - ( evt.pageY - boundingRect.y ) ) * Config.DPR	
 			nEvt.pageX = evt.pageX * Config.DPR
 			nEvt.pageY = evt.pageY * Config.DPR		
 		}

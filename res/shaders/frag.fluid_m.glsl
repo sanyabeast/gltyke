@@ -31,7 +31,7 @@ float rn(float x)
 //----------------------------------------------------------
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) 
 {
-	float ts = time * SPEED + (mouse.x / 10000.);   // time scaled
+	float ts = time * SPEED;   // time scaled
 	
 	vec3 COLOR_MASKS[16];  // blob colors
 	COLOR_MASKS[0] = vec3(1.00, 0.50, 0.00 );
@@ -61,7 +61,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	
 	vec3 lD = normalize(vec3(mouse.xy-vec2(0.5), 0.5));   // light dir	
 	
-	vec3 ld = normalize(vec3(.7, .750,2.));
+	vec3 ld = normalize(vec3(.7, .750 ,2.));
 	
 	vec2 mbPos[COUNT];  // blob position
 	vec3 nn = vec3(.0);
@@ -80,7 +80,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 			        cos(rn2*6.14+ts * rn3));  // calc position
 		
 		mbPos[i] = fragPN - mbPos[i]*.8;
-		float rr = cos(rn3*6.28 +ts * rn1)*.2 +.5;
+		float rr = cos(rn3*4.28 +ts * rn1)*.1 +.5;
 		mbPos[i] *= rr * (1000. / SIZE);   // blob coord
 		float bL = length( mbPos[i] );     // blob length
 		float bH = exp(-bL*2.15678);
@@ -102,7 +102,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	float frs = dot(n,vD);
 	frs = 1.0-clamp(frs,.0,1.);
 	frs = pow(frs,100.0);
-	frs = frs*.4 +.121;
+	frs = frs*.4 +.111;
 	fc += frs;
 	fragColor = vec4( fc*aB, 1.);
 }
